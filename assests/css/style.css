@@ -1,0 +1,25 @@
+:root {
+   --fontclr: #ffffff;
+}
+
+.banner {
+   background: linear-gradient(45deg, rgb(14, 99, 148), rgb(11, 53, 107));
+   color: var(--fontclr);
+   font-family: "Vina Sans";
+   font-size: 30px;
+   text-align: center;
+   letter-spacing: 2px;
+   margin: 0, 0;
+   border-radius: 20px;
+   padding: 20px;
+}
+  
+.banner p {
+   max-width: 75%;
+   width: fit-content;
+}
+
+h1 {
+  margin: 0;
+  line-height: 1.25;
+}
