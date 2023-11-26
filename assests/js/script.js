@@ -31,9 +31,13 @@ var getWeatherData  = function (cityName) {
 }
 
 var displayWeather = function(weatherData, cityName) {
-    var cityHeader = document.createElement ('h2');
-    cityHeader.textContent = cityName;
-    currentWeatherEl.appendChild(cityHeader);
+    var cityEntered = document.createElement ('h2');
+    cityEntered.textContent = cityName;
+    currentWeatherEl.appendChild(cityEntered);
+
+    var todaysDate = document.createElement('h2');
+    todaysDate.textContent = "(" + new Date().toDateString() + ")";
+    currentWeatherEl.appendChild(todaysDate);
 }
 
 cityFormEl.addEventListener('submit', citySubmitHandler);
