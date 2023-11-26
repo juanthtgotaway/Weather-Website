@@ -1,23 +1,30 @@
 :root {
-   --fontclr: #ffffff;
+    --fontclr: #ffffff;
+    --cardclr: #D9C49C;
+    --brdrclr: #F2C879;  
+    --btnhvr: #1C3659;
+    --btn: #0798F2;  
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Viana Sans", "Space Mono", sans-serif;
+    font-size: 16px;
+    /* background-color: #1C3659; */
 }
 
 .banner {
-   background: linear-gradient(45deg, rgb(14, 99, 148), rgb(11, 53, 107));
-   color: var(--fontclr);
-   font-family: "Vina Sans";
-   font-size: 30px;
-   letter-spacing: 2px;
-   border-radius: 20px;
-   padding: 20px;
+    background: linear-gradient(45deg, rgb(14, 99, 148), rgb(11, 53, 107));
+    color: var(--fontclr);
+    font-family: "Vina Sans";
+    font-size: 30px;
+    letter-spacing: 2px;
+    border-radius: 20px;
+    padding: 20px;
 }
   
 .app-title {
-   font-weight: lighter;
-   text-align: center;
-}
-
-h1 {
-  margin: 0;
-  line-height: 1.25;
+    font-weight: lighter;
+    text-align: center;
 }

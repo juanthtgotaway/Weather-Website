@@ -6,6 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono&family=Vina+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assests/css/reset.css">
     <link rel="stylesheet" href="./assests/css/style.css">
     <title>Weather | Homepage</title>
 </head>
@@ -14,15 +15,27 @@
         <h1 class="app-title">Weather Dashboard</h1>
     </header>
 
-    <main>
-        <div class="card">
-            <h3 class="card-header text-uppercase">Search for a City:</h3>
-            <form id="user-city" class="card-body">
-              <label class="form-label" for="city">City</label>
-              <input name="city" id="city" type="text" autofocus="true" class="form-input" />
-              <button type="submit" class="btn">Search</button>
-            </form>
-          </div>
+    <main class ="flex-row justify-space-between">
+        <div class="col-12 col-md-4">
+            <div class="card">
+                <h3 class="card-header">Search for a City:</h3>
+                <form id="user-city" class="card-body">
+                  <input name="city" id="city" type="text" placeholder="Denver" class="form-input" />
+                  <button type="submit" class="btn">Search</button>
+                </form>
+            </div>
+
+            <div class="priorsearch"></div>
+
+            <div class="col-12 col-md-8">
+                <div id="currentweather"></div>
+            </div>
+
+            <div class="col-12 col-md-8">
+                <div id="forecastcards"></div>
+            </div>
+        </div>
     </main>
+    <script src="./assests/js/script.js"></script>
 </body>
 </html>
