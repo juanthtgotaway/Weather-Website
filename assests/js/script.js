@@ -1,16 +1,16 @@
-var cityFormEl = document.querySelector('#user-city');
-var currentWeatherEl = document.querySelector('#currentweather');
-var forecastCardsEl = document.querySelector('#forecastcards');
+var cityFormEl = document.querySelector("#user-city");
+var currentWeatherEl = document.querySelector("#currentweather");
+var forecastCardsEl = document.querySelector("#forecastcards");
 
 var citySubmitHandler = function (event) {
-  event.preventDefault();
-  var cityName = document.querySelector('#city').value.trim();
+    event.preventDefault();
+    var cityName = document.querySelector("#city").value.trim();
 
-  if (cityName) {
-    getWeatherData(cityName);
-    currentWeatherEl.textContent = '';
-    forecastCardsEl.textContent = '';
-  }
+    if (cityName) {
+        getWeatherData(cityName);
+        currentWeatherEl.textContent = "";
+        forecastCardsEl.textContent = "";
+    }
 };
 
 var getWeatherData  = function (cityName) {
@@ -22,7 +22,7 @@ var getWeatherData  = function (cityName) {
             console.log(response);
             response.json().then(function (data) {
                 console.log(data);
-                displayWeather(data, user);
+                displayWeather(data, cityName);
             });
         } else {
             alert('Error: ' + response.statusText);
@@ -30,5 +30,10 @@ var getWeatherData  = function (cityName) {
      });
 }
 
+var displayWeather = function(weatherData, cityName) {
+    var cityHeader = document.createElement ('h2');
+    cityHeader.textContent = cityName;
+    currentWeatherEl.appendChild(cityHeader);
+}
 
 cityFormEl.addEventListener('submit', citySubmitHandler);
