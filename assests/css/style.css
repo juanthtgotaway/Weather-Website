@@ -86,3 +86,29 @@ h1{
     text-align: left;
     text-indent: 20px;
 }
+
+.current-header {
+    display: flex;
+    align-items: center;
+}
+
+.header-container h2, .header-container h4 {
+    line-height: 1.2;
+    margin: 0;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+p {
+    font-size: 16px;
+}

@@ -32,25 +32,30 @@ var getWeatherData  = function (cityName) {
 }
 
 var displayWeather = function(weatherData, cityName) {
+    var currentHeader = document.createElement('div');
+    currentHeader.classList.add("current-header");
+
     var cityEntered = document.createElement ('h2');
     cityEntered.textContent = cityName;
-    currentWeatherEl.appendChild(cityEntered);
+    currentHeader.appendChild(cityEntered);
 
-    var todaysDate = document.createElement('h2');
+    var todaysDate = document.createElement('h4');
     todaysDate.textContent = "(" + new Date().toDateString() + ")";
-    currentWeatherEl.appendChild(todaysDate);
+    currentHeader.appendChild(todaysDate);
+
+    currentWeatherEl.appendChild(currentHeader);
 
     var forecast = weatherData.list[0];
 
-    var todaysTemp = document.createElement('h3');
+    var todaysTemp = document.createElement('p');
     todaysTemp.textContent = "Temp: " + forecast.main.temp + "°F";
     currentWeatherEl.appendChild(todaysTemp);
 
-    var todaysWind = document.createElement('h3');
+    var todaysWind = document.createElement('p');
     todaysWind.textContent = "Wind: " + forecast.wind.speed + " MPH";
     currentWeatherEl.appendChild(todaysWind);
 
-    var todaysHumid = document.createElement('h3');
+    var todaysHumid = document.createElement('p');
     todaysHumid.textContent = "Humidity: " + forecast.main.humidity + "%";
     currentWeatherEl.appendChild(todaysHumid);
 
