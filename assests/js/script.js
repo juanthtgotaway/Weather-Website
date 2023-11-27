@@ -42,10 +42,11 @@ var displayWeather = function(weatherData, cityName) {
 
     var forecast = weatherData.list[0];
 
-    var todaysTemp = document.createElement('h2');
+    var todaysTemp = document.createElement('h3');
     var todaysTempF = (forecast.main.temp - 273.15) * 9/5 + 32;
     todaysTemp.textContent = "Temp: " + todaysTempF.toFixed(2) + "°F";
     currentWeatherEl.appendChild(todaysTemp);
+
 }
 
 cityFormEl.addEventListener('submit', citySubmitHandler);

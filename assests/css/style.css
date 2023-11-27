@@ -2,7 +2,7 @@
     --fontclr: #ffffff;
     --cardclr: #D9C49C;
     --brdrclr: #F2C879;  
-    --btnhvr: #1C3659;
+    --btnhvr: #336cb8;
     --btn: #0798F2;  
 }
 
@@ -21,10 +21,43 @@ body {
     font-size: 30px;
     letter-spacing: 2px;
     border-radius: 20px;
-    padding: 20px;
-}
-  
-.app-title {
-    font-weight: lighter;
+    padding: 35px;
     text-align: center;
+}
+ 
+h1{
+    font-size: 45px;
+}
+
+.card {
+    background: var(--cardclr);
+    border: 1px solid var(--brdrclr);
+    border-radius: 8px;
+    padding: 0px;
+    padding-top: 5px;
+    margin: 15px 10px;
+    padding: 1%;
+}
+
+.card-header {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.form-input {
+    padding: 0px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: var(--fontclr);
+}
+
+.btn {
+    width: 100%;
+    background-color: var(--btn);
+    border-radius: 4px;
+}
+
+.btn:hover {
+    background-color: var(--btnhvr);
 }
