@@ -51,6 +51,10 @@ var displayWeather = function(weatherData, cityName) {
     todaysWind.textContent = "Wind: " + forecast.wind.speed + " MPH";
     currentWeatherEl.appendChild(todaysWind);
 
+    var todaysHumid = document.createElement('h3');
+    todaysHumid.textContent = "Humidity: " + forecast.main.humidity + "%";
+    currentWeatherEl.appendChild(todaysHumid);
+
 }
 
 cityFormEl.addEventListener('submit', citySubmitHandler);
