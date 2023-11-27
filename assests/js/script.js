@@ -29,7 +29,7 @@ var getWeatherData  = function (cityName) {
             alert('Error: ' + response.statusText);
         }
      });
-}
+};
 
 var displayWeather = function(weatherData, cityName) {
     var currentHeader = document.createElement('div');
@@ -60,6 +60,31 @@ var displayWeather = function(weatherData, cityName) {
     currentWeatherEl.appendChild(todaysHumid);
 
     currentWeatherEl.style.display = "block";
+
+    for (var i = 0; i < weatherData.list.length; i += 8) {
+        var forecast = weatherData.list[i];
+        
+        var forecastCard = document.createElement('div');
+        forecastCard.classList.add('forecast-card');
+
+        var dateForecast = document.createElement('h4');
+        dateForecast.textContent = new Date(forecast.dt_txt).toLocaleDateString();
+        forecastCard.appendChild(dateForecast);
+
+        var tempForecast = document.createElement('p');
+        tempForecast.textContent = "Temp: " + forecast.main.temp + "°F";
+        forecastCard.appendChild(tempForecast);
+
+        var windForecast = document.createElement('p');
+        windForecast.textContent = "Wind: " + forecast.wind.speed + "MPH'";
+        forecastCard.appendChild(windForecast);
+
+        var humidForecast = document.createElement('p');
+        humidForecast.textContent = "Humidity: " + forecast.main.humidity + "%";
+        forecastCard.appendChild(humidForecast);
+
+        forecastCardsEl.appendChild(forecastCard);
+    }
 
 }
 

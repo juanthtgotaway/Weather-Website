@@ -32,7 +32,7 @@ h1{
 
 .card {
     background: var(--cardclr);
-    border: 1px solid var(--brdrclr);
+    border: 5px solid var(--brdrclr);
     border-radius: 8px;
     padding: 0px;
     padding-top: 5px;
@@ -57,6 +57,7 @@ h1{
     width: 100%;
     background-color: var(--btn);
     border-radius: 4px;
+    border-style: inset;
 }
 
 .btn:hover {
@@ -70,11 +71,11 @@ h1{
 
 .search {
     width: 30%;
+    height: fit-content;
 }
 
 .weather-details {
     width: 70%;
-    display: flex;
     padding: 20px;
 }
 
@@ -82,9 +83,24 @@ h1{
     background-color: var(--cardclr);
     width: 100%;
     border-radius: 20px;
-    height: 100%;
     text-align: left;
     text-indent: 20px;
+    padding: 1%;
+    border: 5px solid var(--brdrclr);
+}
+
+#forecastcards {
+    display: inline-flex;
+    width: 100%;
+}
+
+.forecast-card {
+    background-color: var(--cardclr);
+    border-radius: 8px;
+    vertical-align: top;
+    padding: 2%;
+    text-align: left;
+    margin: 2%;
 }
 
 .current-header {
@@ -112,3 +128,4 @@ h4 {
 p {
     font-size: 16px;
 }
+
