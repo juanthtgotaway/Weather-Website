@@ -14,7 +14,8 @@ var citySubmitHandler = function (event) {
 };
 
 var getWeatherData  = function (cityName) {
-    var apiURl = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=fad8ad47e93c490afb3a455a487c8ce0";
+    var apiKey = "fad8ad47e93c490afb3a455a487c8ce0"
+    var apiURl = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=" + apiKey;
 
     fetch(apiURl)
      .then(function(response){
@@ -38,6 +39,13 @@ var displayWeather = function(weatherData, cityName) {
     var todaysDate = document.createElement('h2');
     todaysDate.textContent = "(" + new Date().toDateString() + ")";
     currentWeatherEl.appendChild(todaysDate);
+
+    var forecast = weatherData.list[0];
+
+    var todaysTemp = document.createElement('h2');
+    var todaysTempF = (forecast.main.temp - 273.15) * 9/5 + 32;
+    todaysTemp.textContent = "Temp: " + todaysTempF.toFixed(2) + "°F";
+    currentWeatherEl.appendChild(todaysTemp);
 }
 
 cityFormEl.addEventListener('submit', citySubmitHandler);
