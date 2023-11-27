@@ -15,7 +15,7 @@ var citySubmitHandler = function (event) {
 
 var getWeatherData  = function (cityName) {
     var apiKey = "fad8ad47e93c490afb3a455a487c8ce0"
-    var apiURl = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=" + apiKey;
+    var apiURl = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=" + apiKey + "&units=imperial";
 
     fetch(apiURl)
      .then(function(response){
@@ -43,8 +43,7 @@ var displayWeather = function(weatherData, cityName) {
     var forecast = weatherData.list[0];
 
     var todaysTemp = document.createElement('h3');
-    var todaysTempF = (forecast.main.temp - 273.15) * 9/5 + 32;
-    todaysTemp.textContent = "Temp: " + todaysTempF.toFixed(2) + "°F";
+    todaysTemp.textContent = "Temp: " + forecast.main.temp + "°F";
     currentWeatherEl.appendChild(todaysTemp);
 
     var todaysWind = document.createElement('h3');
@@ -54,6 +53,8 @@ var displayWeather = function(weatherData, cityName) {
     var todaysHumid = document.createElement('h3');
     todaysHumid.textContent = "Humidity: " + forecast.main.humidity + "%";
     currentWeatherEl.appendChild(todaysHumid);
+
+    currentWeatherEl.style.display = "block";
 
 }
 

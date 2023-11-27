@@ -62,3 +62,27 @@ h1{
 .btn:hover {
     background-color: var(--btnhvr);
 }
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.search {
+    width: 30%;
+}
+
+.weather-details {
+    width: 70%;
+    display: flex;
+    padding: 20px;
+}
+
+#currentweather {
+    background-color: var(--cardclr);
+    width: 100%;
+    border-radius: 20px;
+    height: 100%;
+    text-align: left;
+    text-indent: 20px;
+}

@@ -15,26 +15,25 @@
         <h1 class="app-title">Weather Dashboard</h1>
     </header>
 
-    <main class ="flex-row justify-space-between">
-        <div class="col-12 col-md-4">
-            <div class="card">
-                <h3 class="card-header">Search for a City:</h3>
-                <form id="user-city" class="card-body">
-                  <input name="city" id="city" type="text" placeholder="Enter City" class="form-input" />
-                  <button type="submit" class="btn">Search</button>
-                </form>
-            </div>
-
-            <div class="priorsearch"></div>
-
-            <div class="col-12 col-md-8">
-                <div id="currentweather"></div>
-            </div>
-
-            <div class="col-12 col-md-8">
-                <div id="forecastcards"></div>
-            </div>
+    <main class ="flex-container justify-space-between">
+        <div class="search card col-12 col-md-4">
+            <h3 class="card-header">Search for a City:</h3>
+            <form id="user-city" class="card-body">
+                <input name="city" id="city" type="text" placeholder="Enter City" class="form-input" />
+                <button type="submit" class="btn">Search</button>
+            </form>
         </div>
+
+        <div class="priorsearch"></div>
+
+        <div class="weather-details col-12 col-md-8">
+            <div id="currentweather" style="display: none;"></div>
+            <div id="forecastcards"></div>
+        </div>
+
+        <!-- <div class="col-12 col-md-8">
+            <div id="forecastcards"></div>
+        </div> -->
     </main>
     <script src="./assests/js/script.js"></script>
 </body>
