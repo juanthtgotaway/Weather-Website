@@ -1,9 +1,10 @@
 :root {
-    --fontclr: #ffffff;
-    --cardclr: #D9C49C;
-    --brdrclr: #F2C879;  
-    --btnhvr: #336cb8;
-    --btn: #0798F2;  
+    --fontclr: hsl(0, 0%, 100%);
+    --cardclr: #F2B705;
+    --brdrclr: #8b6b09;  
+    --btnhvr: #A6681C;
+    --btn: #694212;  
+    --priorsrch: 
 }
 
 body {
@@ -58,6 +59,7 @@ h1{
     background-color: var(--btn);
     border-radius: 4px;
     border-style: inset;
+    cursor: pointer;
 }
 
 .btn:hover {
@@ -129,3 +131,20 @@ p {
     font-size: 16px;
 }
 
+.priorsearch {
+    padding: 3%;
+}
+
+.city-card {
+    background-color: var(--brdrclr); 
+    border: 1px solid var(--brdrclr); 
+    border-radius: 8px; 
+    padding: 10px; 
+    margin-bottom: 10px; 
+    text-align: center; 
+    cursor:pointer;
+}
+
+.city-card:hover {
+    background-color: var(--btn);
+}

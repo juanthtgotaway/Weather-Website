@@ -8,6 +8,7 @@ var citySubmitHandler = function (event) {
 
     if (cityName) {
         getWeatherData(cityName);
+        updatePriorSearches(cityName);
         currentWeatherEl.textContent = "";
         forecastCardsEl.textContent = "";
     }
@@ -16,6 +17,9 @@ var citySubmitHandler = function (event) {
 var getWeatherData  = function (cityName) {
     var apiKey = "fad8ad47e93c490afb3a455a487c8ce0"
     var apiURl = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=" + apiKey + "&units=imperial";
+
+    currentWeatherEl.textContent = "";
+    forecastCardsEl.textContent = "";
 
     fetch(apiURl)
      .then(function(response){
@@ -87,5 +91,30 @@ var displayWeather = function(weatherData, cityName) {
     }
 
 }
+
+var updatePriorSearches = function(cityName) {
+    var priorSearchesEl = document.querySelector(".priorsearch");
+    var cityAlreadyListed = false;
+
+    for (var i = 0; i < priorSearchesEl.children.length; i++) {
+        var child = priorSearchesEl.children[i];
+        if (child.textContent === cityName) {
+            cityAlreadyListed = true;
+            break; 
+        }
+    }
+
+    if (!cityAlreadyListed) {
+        var cityCard = document.createElement('div');
+        cityCard.classList.add('city-card');
+        cityCard.textContent = cityName;
+
+        cityCard.addEventListener('click', function() {
+            getWeatherData(cityName);
+        });
+
+        priorSearchesEl.appendChild(cityCard);
+    }
+};
 
 cityFormEl.addEventListener('submit', citySubmitHandler);
